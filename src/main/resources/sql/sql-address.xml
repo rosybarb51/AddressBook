@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  	<!-- 아래의 주소는 맵퍼의 패키지.맵퍼이름 을 적어서 연결하기 -->
+	<mapper namespace="address.mapper.AddressMapper">
+	
+	<!-- 전체목록 -->
+	<!-- 아래의 리절트타입은 맵퍼의 임포트  -->
+	<select id ="selectListAddress" resultType="address.dto.AddressDto">
+		<![CDATA[
+			SELECT 
+				num, name, phone, tel 
+			FROM 
+				addressbook 
+			WHERE 
+				del_yn = 'N' ORDER BY num DESC
+		]]>
+	</select>
+	
+	<!-- 상세목록 -->
+	<select id ="selectDetailAddress" resultType="address.dto.AddressDto" parameterType="int">
+		<![CDATA[
+			SELECT 
+				num, name, phone, tel, addr, email 
+			FROM 
+				addressbook 
+			WHERE 
+				num = #{num}
+			AND 
+				del_yn = 'N'
+		]]>
+	</select>
+	
+	<!-- 글 등록 -->
+	<insert id ="insertAddress" parameterType="address.dto.AddressDto">
+		<![CDATA[
+			INSERT INTO 
+				addressbook 
+				(name, phone, tel, email, addr)
+			VALUES 
+				(#{name}, #{phone}, #{tel}, #{email}, #{addr})
+		]]>
+	</insert>
+	
+	<!-- 수정하기 -->
+	<update id ="updateAddress" parameterType="address.dto.AddressDto">
+		<![CDATA[
+			UPDATE 
+				addressbook 
+			SET 
+				name = #{name},
+				phone = #{phone}, 
+				tel = #{tel}, 
+				email = #{email}, 
+				addr = #{addr}
+			WHERE 
+				num = #{num}
+		]]>
+	</update>
+	
+	<!-- 삭제하기 -->
+	<update id ="deleteAddress" parameterType="int">
+		<![CDATA[
+			DELETE FROM 
+				addressbook 
+			WHERE 
+				num = #{num}
+		]]>
+	</update>
+	</mapper>
