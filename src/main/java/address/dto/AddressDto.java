@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class AddressDto {
 	private int num;
-	private String name;
+	private String userName;
 	private String phone;
 	private String tel;
 	private String email;

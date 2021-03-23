@@ -33,30 +33,30 @@
 				<form action="/addr/updateAddress.do" method="POST">
 					<div class="form-group">
 						<label for="name">이름 : </label>
-						<input type="text" class="form-control" id="name" name="userName" th:value="${addr.userName}">
+						<input type="text" class="form-control" id="name" name="userName" th:value="${addr.userName}" >
 					</div>
-					<div class="form-grouop">
+					<div class="form-group">
 						<label for="phone">휴대폰 : </label>
-						<input type="text" class="form-control" id="phone" name="phone" th:value="${addr.phone}">
+						<input type="text" class="form-control" id="phone" name="phone" th:value="${addr.phone}" >
 					</div>
 					<div class="form-group">
 						<label for="tel">전화번호 : </label>
-						<input type="text" class="form-control" id="tel" name="tel" th:value="${addr.tel}">
+						<input type="text" class="form-control" id="tel" name="tel" th:value="${addr.tel}" >
 					</div>
-					<div class="form-grouop">
+					<div class="form-group">
 						<label for="email">이메일 : </label>
-						<input type="email" class="form-control" id="email" name="email" th:value="${addr.email}">
+						<input type="email" class="form-control" id="email" name="email" th:value="${addr.email}" >
 					</div>
-					<div class="form-gorup">
+					<div class="form-group">
 						<label for="addr">주소 : </label>
-						<input type="text" class="form-control" id="addr" name="addr" th:value="${addr.addr}">
+						<input type="text" class="form-control" id="addr" name="addr" th:value=${addr.addr} >
 					</div>
 					
 					<input type="hidden" name="num" th:value="${addr.num}">
 					
 					<div class="d-flex justify-content-end">
 						<button class="btn btn-secondary" id="btnCancel" type="button">취소</button>
-						<button class="btn btn-success ml-2" id="btnSubmit" type="submit">수정</button>
+						<button class="btn btn-success ml-2" type="submit">수정</a>
 					</div>
 				</form>
 			</article>

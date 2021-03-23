@@ -35,7 +35,7 @@
 						<tr th:if="${#lists.size(addrList)} > 0" th:each="list : ${addrList}">
 							<td th:text="${list.num}">1</td>
 							<td>
-								<a href="/addr/openDetailAddress.do?num=" th:attrappend="href=${list.num}" th:text="${list.name}">고길동</a>
+								<a href="/addr/openDetailAddress.do?num=" th:attrappend="href=${list.num}" th:text="${list.userName}">고길동</a>
 							</td>
 							<td th:text="${list.phone}">0</td>
 						</tr>

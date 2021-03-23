@@ -12,7 +12,7 @@
 	<select id ="selectListAddress" resultType="address.dto.AddressDto">
 		<![CDATA[
 			SELECT 
-				num, name, phone, tel 
+				num, user_name, phone, tel 
 			FROM 
 				addressbook 
 			WHERE 
@@ -24,7 +24,7 @@
 	<select id ="selectDetailAddress" resultType="address.dto.AddressDto" parameterType="int">
 		<![CDATA[
 			SELECT 
-				num, name, phone, tel, addr, email 
+				num, user_name, phone, tel, addr, email 
 			FROM 
 				addressbook 
 			WHERE 
@@ -39,9 +39,9 @@
 		<![CDATA[
 			INSERT INTO 
 				addressbook 
-				(name, phone, tel, email, addr)
+				(user_name, phone, tel, email, addr)
 			VALUES 
-				(#{name}, #{phone}, #{tel}, #{email}, #{addr})
+				(#{userName}, #{phone}, #{tel}, #{email}, #{addr})
 		]]>
 	</insert>
 	
@@ -51,7 +51,7 @@
 			UPDATE 
 				addressbook 
 			SET 
-				name = #{name},
+				user_name = #{userName},
 				phone = #{phone}, 
 				tel = #{tel}, 
 				email = #{email}, 
